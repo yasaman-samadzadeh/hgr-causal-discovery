@@ -7,5 +7,5 @@ build-backend = "setuptools.build_meta"
 name = "hgrlingam"
 version = "0.1"
 
-[tool.setuptools.packages.find]   # <-- tell setuptools where to look
-where = ["src"]
+[tool.setuptools.packages.find]
+where = ["."]

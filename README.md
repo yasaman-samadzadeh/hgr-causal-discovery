@@ -18,28 +18,30 @@ We attack this from three angles -- preprocessing transforms, internal algorithm
 .
 ├── bivariate-pipeline/        # Experiment 1: Config-driven bivariate HGR → LiNGAM pipeline
 │   ├── configs/               #   YAML grids for datasets, HGR params, LiNGAM variants
-│   ├── src/hgrlingam/         #   Core library (data generation, HGR wrapper, LiNGAM runner)
 │   ├── scripts/               #   Runnable pipeline steps (generate, transform, evaluate)
-│   └── pyproject.toml
+│   ├── data.py                #   Dataset generation + loading
+│   ├── hgr.py                 #   Kernel-HGR wrapper (maxcorr)
+│   └── causal.py              #   LiNGAM runner
 │
 ├── hgr-injection/             # Experiment 2: DirectLiNGAM subclass with HGR internals
-│   └── src/lingamhgr/
-│       ├── direct_lingam_hgr_injection.py    # DirectLiNGAM_HGR: poly residuals + DK-HGR scorer
-│       └── direct_lingam_hgr_experiments.py  # Random polynomial DAG benchmarks + DAG plots
+│   ├── direct_lingam_hgr_injection.py    # DirectLiNGAM_HGR: poly residuals + DK-HGR scorer
+│   ├── direct_lingam_hgr_experiments.py  # Random polynomial DAG benchmarks + DAG plots
+│   └── residuals.py                      # Polynomial ridge residual helper
 │
 ├── hgr-vs-hsic/               # Experiment 3: HGR vs HSIC independence test comparison
-│   └── hgrlingam/
-│       └── hgrlingam.py       # HGRDirectLiNGAM built on _BaseLiNGAM
+│   ├── hgrlingam.py           #   HGRDirectLiNGAM built on _BaseLiNGAM
+│   ├── injection.ipynb        #   HGR injection experiments
+│   └── sanity_test.ipynb      #   Validation tests
 │
 ├── multivariate-benchmarks/   # Experiment 4: Multivariate DAG benchmarks at scale
 │   ├── final.ipynb            #   NL-HGR end-to-end comparative analysis
 │   ├── modified.ipynb         #   Iterative HGR-LiNGAM prototyping
 │   ├── multivariate.ipynb     #   Full multivariate experiments with DAG visualisation
-│   └── multivariate1.ipynb    #   Extended runs with kernel sweep (k ∈ {1,3}, {1,5}, …)
+│   └── multivariate1.ipynb    #   Extended runs with kernel sweep
 │
 ├── docs/
-│   ├── project_summary.md     # High-level project overview and timeline
-│   └── experiment_report.md   # Detailed experiment report with code snippets
+│   ├── project_summary.md     #   High-level project overview and timeline
+│   └── experiment_report.md   #   Detailed experiment report with code snippets
 │
 ├── references/                # Papers and reading materials (gitignored)
 └── .gitignore
@@ -75,8 +77,8 @@ Replaces LiNGAM's internal independence test and residual computation with nonli
 - Benchmarks `DirectLiNGAM_HGR` against `PW-ling` and `HSIC-kernel` on random polynomial DAGs
 
 ```bash
-cd hgr-injection/src
-python -m lingamhgr.direct_lingam_hgr_injection --bench 20 --samples 1000 --deg-res 5 --kernel-a 4 --kernel-b 6
+cd hgr-injection
+python direct_lingam_hgr_injection.py --bench 20 --samples 1000 --deg-res 5 --kernel-a 4 --kernel-b 6
 ```
 
 ### 3. HGR vs HSIC (`hgr-vs-hsic/`)

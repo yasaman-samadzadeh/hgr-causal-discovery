@@ -7,7 +7,7 @@ import pandas as pd
 from sklearn.preprocessing import StandardScaler
 from causalgen import Generator
 
-REPO_ROOT = Path(__file__).resolve().parents[2]
+REPO_ROOT = Path(__file__).resolve().parent
 DATASETS  = REPO_ROOT / "datasets"
 DATASETS.mkdir(exist_ok=True)
 
