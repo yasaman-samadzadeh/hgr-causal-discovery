@@ -32,13 +32,10 @@ We attack this from three angles -- preprocessing transforms, internal algorithm
 │       └── hgrlingam.py       # HGRDirectLiNGAM built on _BaseLiNGAM
 │
 ├── multivariate-benchmarks/   # Experiment 4: Multivariate DAG benchmarks at scale
-│   ├── final.ipynb            #   NL-HGR comparative analysis (linear/cubic/sine/tanh/square)
+│   ├── final.ipynb            #   NL-HGR end-to-end comparative analysis
+│   ├── modified.ipynb         #   Iterative HGR-LiNGAM prototyping
 │   ├── multivariate.ipynb     #   Full multivariate experiments with DAG visualisation
 │   └── multivariate1.ipynb    #   Extended runs with kernel sweep (k ∈ {1,3}, {1,5}, …)
-│
-├── final.ipynb                # Experiment 5: End-to-end NL-HGR vs baselines comparison
-├── multivariate1.ipynb        # Colab notebook: multivariate HGR-LiNGAM experiments
-├── multivariate12.ipynb       # Colab notebook: extended multivariate experiments
 │
 ├── docs/
 │   ├── project_summary.md     # High-level project overview and timeline
@@ -101,10 +98,6 @@ Large-scale evaluation across multiple DAG sizes, function types, and kernel con
 - Kernel parameter sweeps (k ∈ {1,3}, {1,5}, {3,3}, {3,5}, {5,5})
 - Runtime comparisons
 - Heatmaps and bar charts for presentations
-
-### 5. End-to-End Comparison (`final.ipynb`)
-
-The top-level notebook implementing the full **NL-HGR** method: an end-to-end nonlinear LiNGAM variant with HGR-based components, compared against linear baselines.
 
 ## Key Dependencies
 
