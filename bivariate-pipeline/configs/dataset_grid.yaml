@@ -1,0 +1,31 @@
+# configs/dataset_grid.yaml
+# Cartesian‑product grid: every combination is generated.
+
+name_prefix: "D"
+
+# Random seeds (add more if you like)
+seed: [91, 30]
+
+x_dist: ["normal"]
+# Structural functions (all monotone)
+f_type:
+  - cubic
+  - quintic
+  - sine
+  - cubic_noiseless
+  - quintic_noiseless
+  - sine_noiseless
+  - noise_only
+  - shuffled
+  - random_pair
+
+
+# Noise families
+noise_type:
+  - logistic      
+  
+noise_scale: [0.3 , 0.4]    # std / scale of the noise
+
+# Sample sizes (CSuite style)
+n_train: 4000
+n_test: 2000

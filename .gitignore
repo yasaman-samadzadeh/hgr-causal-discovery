@@ -1,0 +1,59 @@
+# Virtual environments
+.venv/
+venv/
+env/
+lib/python*/
+bin/python*
+bin/pip*
+bin/activate*
+share/python-wheels/
+pyvenv.cfg
+include/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+*.egg
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Large files
+*.zip
+
+# Large reference materials (PDFs, zips)
+references/*.pdf
+references/*.png
+
+# Upstream lingam library clone (install via pip instead)
+multivariate-benchmarks/lingam/
+
+# Embedded venv in hgr-vs-hsic
+hgr-vs-hsic/hgrlingam/lib/
+hgr-vs-hsic/hgrlingam/bin/
+hgr-vs-hsic/hgrlingam/include/
+hgr-vs-hsic/hgrlingam/share/
+hgr-vs-hsic/hgrlingam/pyvenv.cfg
+
+# Results and data (regenerable)
+bivariate-pipeline/results/
+bivariate-pipeline/datasets/
+bivariate-pipeline/plots/hgr/
+
+# Parquet result files
+*.parquet

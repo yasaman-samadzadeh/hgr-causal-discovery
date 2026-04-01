@@ -1,0 +1,8 @@
+semantics: "hgr"
+algorithm: ["dk"]
+backend:   ["numpy"]
+
+kernel_a: [3, 4, 5]
+kernel_b: [1, 2, 3, 4, 5]
+
+extras: {}

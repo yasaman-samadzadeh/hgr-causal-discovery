@@ -1,0 +1,16 @@
+# --- runtime ---
+numpy
+pandas
+scikit-learn
+matplotlib
+hydra-core
+causalgen            # synthetic‑data DSL
+maxcorr              # kernel‑HGR
+lingam               # DirectLiNGAM & friends
+tqdm
+# --- dev / tooling ---
+black==24.3.0
+ruff==0.4.4
+pytest
+pytest-cov
+nbval

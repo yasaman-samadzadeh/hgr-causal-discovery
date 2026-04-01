@@ -1,0 +1,2 @@
+algorithm:  ["direct"]   # list of LiNGAM variants to try
+random_state: [0]               # list of seeds (expand if needed)
